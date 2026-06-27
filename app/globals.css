@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Warm Earth Tone Tokens ── */
+:root {
+  /* Light mode — warm cream palette */
+  --ds-bg:     #f5f0e8;               /* dark-section bg  */
+  --ds-text:   #2e1a0a;               /* dark-section text */
+  --ds-muted:  rgba(46, 26, 10, 0.52);
+  --ds-border: rgba(46, 26, 10, 0.14);
+  --ds-pill:   rgba(46, 26, 10, 0.10);
+
+  --cream:        #faf7f2;             /* light-section bg */
+  --cream-text:   #2e1a0a;
+  --cream-muted:  rgba(46, 26, 10, 0.52);
+  --cream-border: rgba(46, 26, 10, 0.12);
+
+  --gold:      #c5852a;               /* brand accent */
+  --photo-bg:  #e8c896;               /* photo frame bg  */
+}
+
+[data-theme="dark"] {
+  /* Dark mode — deep warm brown-black (like the screenshot) */
+  --ds-bg:     #080503;                      /* near-black warm dark      */
+  --ds-text:   #f0e4cc;                      /* warm ivory white          */
+  --ds-muted:  rgba(240, 228, 204, 0.48);
+  --ds-border: rgba(197, 133, 42, 0.18);     /* gold-tinted border        */
+  --ds-pill:   rgba(197, 133, 42, 0.10);
+
+  --cream:        #110e09;                   /* "light" sections: just slightly lighter */
+  --cream-text:   #f0e4cc;
+  --cream-muted:  rgba(240, 228, 204, 0.48);
+  --cream-border: rgba(197, 133, 42, 0.15);
+
+  --gold:      #c8892e;                      /* slightly richer amber     */
+  --photo-bg:  #e8c896;
+}
+
+html { scroll-behavior: smooth; }
+
+body { background-color: var(--ds-bg); }
+
+/* ── Section helpers ── */
+.section-cream {
+  background-color: var(--cream);
+  color: var(--cream-text);
+}
+
+.section-dark {
+  background-color: var(--ds-bg);
+  color: var(--ds-text);
+}
+
+/* ── Dark mode: section h2 headings glow amber like the screenshot ── */
+[data-theme="dark"] h2 {
+  color: var(--gold) !important;
+}
+
+/* ── Rotating badge ── */
+@keyframes badge-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.badge-ring { animation: badge-spin 10s linear infinite; }
+
+/* ── Skills separator dot ── */
+.skill-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--cream-text);
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+/* ── Experience slide ── */
+.exp-slide { display: none; }
+.exp-slide.active { display: flex; }
+
+/* ── Project live-circle hover ── */
+.live-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  background: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #2e1a0a;
+  text-align: center;
+  line-height: 1.25;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 220ms, transform 220ms;
+  z-index: 2;
+}
+.project-card:hover .live-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Scroll padding for fixed header ── */
+section[id] { scroll-margin-top: 72px; }
+
+/* ── Contact form inputs ── */
+.contact-input {
+  width: 100%;
+  background: var(--cream);
+  border: 1.5px solid var(--cream-border);
+  border-radius: 12px;
+  color: var(--cream-text);
+  font-family: var(--font-jakarta), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.contact-input::placeholder { color: var(--cream-muted); }
+
+.contact-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(197, 133, 42, 0.15);
+}
+
+.contact-input-dark {
+  width: 100%;
+  background: var(--ds-bg);
+  border: 1.5px solid var(--ds-border);
+  border-radius: 12px;
+  color: var(--ds-text);
+  font-family: var(--font-jakarta), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.contact-input-dark::placeholder { color: var(--ds-muted); }
+
+.contact-input-dark:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(197, 133, 42, 0.15);
+}
+
+/* ── Contact info card ── */
+.contact-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--ds-border);
+  transition: background 200ms ease;
+}
+
+.contact-info-card:hover { background: var(--ds-pill); }
+
+/* ── Footer / nav link hover (CSS-only, no JS handlers needed) ── */
+.ds-nav-link {
+  color: var(--ds-muted);
+  transition: color 200ms, background 200ms;
+}
+.ds-nav-link:hover {
+  color: var(--ds-text);
+  background: var(--ds-pill);
+}
+
+.ds-social-link {
+  color: var(--ds-muted);
+  transition: color 200ms;
+}
+.ds-social-link:hover {
+  color: var(--gold);
+}
+
+.service-card {
+  transition: transform 300ms, box-shadow 300ms, border-color 300ms;
+}
+.service-card:hover {
+  border-color: var(--gold) !important;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(197, 133, 42, 0.12);
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.education-card {
+  animation: fadeSlideUp 0.6s ease both;
+  transition: transform 300ms, box-shadow 300ms, border-color 300ms;
+}
+.education-card:hover {
+  border-color: var(--gold) !important;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(197, 133, 42, 0.13);
+}
+.education-card .edu-pill {
+  transition: border-color 250ms, color 250ms, background 250ms;
+}
+.education-card:hover .edu-pill {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(197, 133, 42, 0.06);
+}
+.education-card .edu-badge {
+  transition: transform 300ms;
+}
+.education-card:hover .edu-badge {
+  transform: scale(1.08);
+}
+
+.hero-social-link {
+  border: 1px solid var(--ds-border);
+  color: var(--ds-text);
+  transition: border-color 200ms, color 200ms, transform 200ms;
+}
+.hero-social-link:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
