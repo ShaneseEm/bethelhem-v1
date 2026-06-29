@@ -23,6 +23,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light" className={`${jakarta.variable} ${cormorant.variable}`}>
+  <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        />
+      </head>
       <body className="bg-navy font-sans overflow-x-hidden">{children}</body>
     </html>
   )
