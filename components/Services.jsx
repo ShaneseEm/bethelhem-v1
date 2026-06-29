@@ -1,42 +1,42 @@
 const SERVICES = [
   {
     num: '01',
-    icon: '⚙️',
+    icon: 'api',
     title: 'Backend Development',
     desc: 'Scalable APIs, server-side logic, and database architecture for rock-solid web applications.',
     features: ['RESTful APIs', 'Database design'],
   },
   {
     num: '02',
-    icon: '🤖',
+    icon: 'psychology',
     title: 'Machine Learning',
     desc: 'AI-powered models for prediction, classification, and real-world decision-making.',
     features: ['Model training', 'AI integration'],
   },
   {
     num: '03',
-    icon: '🌐',
+    icon: 'hub',
     title: 'Full-Stack Development',
     desc: 'End-to-end web applications from pixel-perfect frontends to fully deployed backends.',
     features: ['MERN stack', 'Full deployment'],
   },
   {
     num: '04',
-    icon: '🎨',
+    icon: 'phone_iphone',
     title: 'Frontend Development',
     desc: 'Clean, responsive, and accessible interfaces using the latest web standards.',
     features: ['React & Next.js', 'Responsive design'],
   },
   {
     num: '05',
-    icon: '✏️',
+    icon: 'design_services',
     title: 'UI Design',
     desc: 'Intuitive, visually compelling interfaces designed for real users and real impact.',
     features: ['Figma', 'Design systems'],
   },
   {
     num: '06',
-    icon: '📱',
+    icon: 'phone_iphone',
     title: 'Mobile Development',
     desc: 'Cross-platform mobile experiences that feel native and work seamlessly on any device.',
     features: ['React Native', 'Cross-platform'],
@@ -54,11 +54,15 @@ function ServiceCard({ service }) {
       />
 
       {/* icon */}
-      <span className="text-3xl w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
-        style={{ background: 'rgba(197,133,42,0.1)' }}
-      >
-        {service.icon}
-      </span>
+      {/* icon */}
+<span
+  className="w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+  style={{ background: 'rgba(197,133,42,0.1)' }}
+>
+  <span className="material-symbols-outlined text-3xl">
+    {service.icon}
+  </span>
+</span>
 
       {/* title */}
       <h3 className="font-extrabold text-[1.15rem] leading-snug transition-colors duration-300 group-hover:text-[color:var(--gold)]"
