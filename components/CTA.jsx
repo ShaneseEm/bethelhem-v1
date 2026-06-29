@@ -123,7 +123,9 @@ export default function Contact() {
             <span
               className="w-10 h-10 shrink-0 rounded-full flex items-center justify-center text-base"
               style={{ background: 'rgba(197,133,42,0.15)', color: 'var(--gold)' }}
-            >✉</span>
+            >
+              <span className="material-symbols-outlined">email</span>
+            </span>
             <div>
               <p className="text-[10px] font-black uppercase tracking-widest mb-0.5" style={{ color: 'var(--gold)' }}>Email</p>
               <a
@@ -140,7 +142,9 @@ export default function Contact() {
             <span
               className="w-10 h-10 shrink-0 rounded-full flex items-center justify-center text-base"
               style={{ background: 'rgba(197,133,42,0.15)', color: 'var(--gold)' }}
-            >📍</span>
+            >
+              <span className="material-symbols-outlined">location_away</span>
+            </span>
             <div>
               <p className="text-[10px] font-black uppercase tracking-widest mb-0.5" style={{ color: 'var(--gold)' }}>Location</p>
               <span className="text-sm font-semibold" style={{ color: 'var(--ds-text)' }}>Addis Ababa, Ethiopia</span>
