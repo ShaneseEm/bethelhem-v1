@@ -80,27 +80,38 @@ function ProjectCard({ project }) {
       }}
     >
       {/* image */}
-      <div className="relative h-52 overflow-hidden" style={{ background: project.accent }}>
-        {project.img ? (
-          <Image src={project.img} alt={project.title} fill className="object-cover transition-transform duration-500 hover:scale-105" />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <span className="font-extrabold text-lg opacity-30" style={{ color: 'var(--cream-text)' }}>
-              {project.title}
-            </span>
-          </div>
-        )}
-        {project.live && (
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noreferrer"
-            className="live-btn"
-          >
-            Live<br />Project
-          </a>
-        )}
-      </div>
+      {project.live ? (
+        <a
+          href={project.live}
+          target="_blank"
+          rel="noreferrer"
+          className="relative h-52 overflow-hidden block"
+          style={{ background: project.accent }}
+        >
+          {project.img ? (
+            <Image src={project.img} alt={project.title} fill className="object-cover transition-transform duration-500 hover:scale-105" />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="font-extrabold text-lg opacity-30" style={{ color: 'var(--cream-text)' }}>
+                {project.title}
+              </span>
+            </div>
+          )}
+          <span className="live-btn">Live<br />Project</span>
+        </a>
+      ) : (
+        <div className="relative h-52 overflow-hidden" style={{ background: project.accent }}>
+          {project.img ? (
+            <Image src={project.img} alt={project.title} fill className="object-cover" />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="font-extrabold text-lg opacity-30" style={{ color: 'var(--cream-text)' }}>
+                {project.title}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* content */}
       <div className="flex flex-col flex-1 p-5 gap-3">

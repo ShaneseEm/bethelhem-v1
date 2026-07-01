@@ -7,8 +7,8 @@ export default function Hero() {
       className="min-h-screen pt-[72px] flex items-center transition-colors duration-300"
       style={{ background: 'var(--ds-bg)' }}
     >
-      <div className="w-full max-w-6xl mx-auto px-4 lg:px-6 py-16
-                      grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-14 items-center">
+      <div className="w-full max-w-[92rem] mx-auto px-4 lg:px-4 py-16
+                      grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-center">
 
         {/* ── Left: copy ── */}
         <div className="flex flex-col gap-6">
@@ -90,7 +90,7 @@ export default function Hero() {
 
         {/* ── Right: photo ── */}
         <div className="flex justify-center lg:justify-end">
-          <div className="group relative w-[260px] sm:w-[320px]">
+          <div className="group relative w-[300px] sm:w-[400px] lg:w-[460px]">
 
             {/* amber offset block */}
             <div
@@ -101,10 +101,10 @@ export default function Hero() {
             <Image
               src="/assets/photo_2026-02-26_18-46-47.jpg"
               alt="Bethelhem Alemayehu"
-              width={320}
-              height={440}
+              width={460}
+              height={580}
               priority
-              className="relative z-10 w-full h-[420px] sm:h-[460px] object-cover object-top rounded-3xl
+              className="relative z-10 w-full h-[480px] sm:h-[560px] lg:h-[620px] object-cover object-top rounded-3xl
                          transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-2xl"
             />
 

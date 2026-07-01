@@ -1,17 +1,17 @@
 :root {
-  color-scheme: dark;
-  --bg: #100b06;
-  --bg-soft: #1b1208;
-  --surface: rgba(30, 20, 15, 0.88);
-  --surface-strong: rgba(30, 20, 15, 0.96);
-  --text: #f6eddf;
-  --muted: #c9b29b;
-  --line: rgba(255, 244, 230, 0.16);
-  --brand: #b78052;
-  --brand-dark: #e2ceb7;
-  --accent: #f1ddc4;
-  --accent-2: #d7baa0;
-  --shadow: rgba(10, 6, 4, 0.55);
+  color-scheme: light;
+  --bg: #f9f3eb;
+  --bg-soft: #f2e8dc;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-strong: rgba(255, 255, 255, 0.98);
+  --text: #2f210e;
+  --muted: #6f553d;
+  --line: rgba(125, 99, 74, 0.18);
+  --brand: #8d5a2f;
+  --brand-dark: #5f3718;
+  --accent: #c9a579;
+  --accent-2: #b08a5a;
+  --shadow: rgba(51, 34, 22, 0.12);
 }
 
 :root[data-theme="dark"] {

@@ -14,6 +14,7 @@ export default function Contact() {
   const [form, setForm]     = useState(EMPTY)
   const [status, setStatus] = useState('idle')
   const [touched, setTouch] = useState({})
+  const [error, setError]   = useState('')
 
   const set = f => e => {
     setForm(p => ({ ...p, [f]: e.target.value }))
@@ -30,11 +31,26 @@ export default function Contact() {
 
   const canSubmit = Object.values(valid).every(Boolean)
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
     if (!canSubmit) return
     setStatus('sending')
-    setTimeout(() => { setStatus('sent'); setForm(EMPTY); setTouch({}) }, 1400)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Something went wrong.')
+      setStatus('sent')
+      setForm(EMPTY)
+      setTouch({})
+    } catch (err) {
+      setError(err.message)
+      setStatus('idle')
+    }
   }
 
   return (

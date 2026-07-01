@@ -45,7 +45,7 @@ const SERVICES = [
 
 function ServiceCard({ service }) {
   return (
-    <article className="service-card group relative flex flex-col gap-4 p-7 rounded-2xl border overflow-hidden cursor-pointer"
+    <article className="service-card group relative flex flex-col gap-5 p-9 rounded-2xl border overflow-hidden cursor-pointer"
       style={{ background: 'var(--cream)', borderColor: 'var(--cream-border)' }}
     >
       {/* gold top bar on hover */}
@@ -53,34 +53,38 @@ function ServiceCard({ service }) {
         style={{ background: 'var(--gold)' }}
       />
 
-      {/* icon */}
-      {/* icon */}
-<span
-  className="w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
-  style={{ background: 'rgba(197,133,42,0.1)' }}
->
-  <span className="material-symbols-outlined text-3xl">
-    {service.icon}
-  </span>
-</span>
+      {/* number + icon row */}
+      <div className="flex items-center justify-between">
+        <span
+          className="w-14 h-14 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+          style={{ background: 'rgba(197,133,42,0.12)' }}
+        >
+          <span className="material-symbols-outlined" style={{ fontSize: '1.75rem', color: 'var(--gold)' }}>
+            {service.icon}
+          </span>
+        </span>
+        <span className="font-black text-[2.2rem] leading-none" style={{ color: 'rgba(197,133,42,0.18)', fontFamily: '"Cormorant Garamond", Georgia, serif' }}>
+          {service.num}
+        </span>
+      </div>
 
       {/* title */}
-      <h3 className="font-extrabold text-[1.15rem] leading-snug transition-colors duration-300 group-hover:text-[color:var(--gold)]"
+      <h3 className="font-extrabold text-[1.3rem] leading-snug transition-colors duration-300 group-hover:text-[color:var(--gold)]"
         style={{ color: 'var(--cream-text)' }}
       >
         {service.title}
       </h3>
 
       {/* description */}
-      <p className="text-[0.9rem] leading-relaxed flex-1" style={{ color: 'var(--cream-muted)' }}>
+      <p className="text-[1rem] leading-relaxed flex-1" style={{ color: 'var(--cream-muted)' }}>
         {service.desc}
       </p>
 
       {/* feature pills */}
-      <div className="flex flex-wrap gap-2 pt-2" style={{ borderTop: '1px solid var(--cream-border)' }}>
+      <div className="flex flex-wrap gap-2 pt-3" style={{ borderTop: '1px solid var(--cream-border)' }}>
         {service.features.map((f) => (
           <span key={f}
-            className="px-3 py-1 rounded-full text-xs font-semibold border transition-all duration-300 group-hover:border-[color:var(--gold)] group-hover:text-[color:var(--gold)]"
+            className="px-4 py-1.5 rounded-full text-sm font-semibold border transition-all duration-300 group-hover:border-[color:var(--gold)] group-hover:text-[color:var(--gold)]"
             style={{ borderColor: 'var(--cream-border)', color: 'var(--cream-muted)' }}
           >
             {f}
@@ -98,26 +102,26 @@ export default function Services() {
       className="min-h-screen flex flex-col justify-start scroll-mt-[72px] pt-8 pb-20 transition-colors duration-300 overflow-hidden relative"
       style={{ background: 'var(--ds-bg)' }}
     >
-      <div className="max-w-6xl mx-auto px-4 lg:px-6 w-full relative z-10">
+      <div className="max-w-[92rem] mx-auto px-4 lg:px-6 w-full relative z-10">
 
         {/* header */}
-        <div className="mb-12">
-          <span className="block text-xs font-black uppercase tracking-[0.25em] mb-3" style={{ color: 'var(--gold)' }}>
+        <div className="mb-14">
+          <span className="block text-xs font-black uppercase tracking-[0.25em] mb-4" style={{ color: 'var(--gold)' }}>
             What I Offer
           </span>
           <h2
             className="font-extrabold leading-[1.0]"
-            style={{ fontSize: 'clamp(2.4rem, 5vw, 3.6rem)', color: 'var(--ds-text)' }}
+            style={{ fontSize: 'clamp(2.8rem, 5.5vw, 4.2rem)', color: 'var(--ds-text)' }}
           >
             My Services
           </h2>
-          <p className="mt-3 text-base max-w-md" style={{ color: 'var(--ds-muted)' }}>
+          <p className="mt-4 text-lg max-w-lg" style={{ color: 'var(--ds-muted)' }}>
             Clean, scalable, and responsive solutions — from idea to deployment.
           </p>
         </div>
 
         {/* 3-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {SERVICES.map((s) => (
             <ServiceCard key={s.title} service={s} />
           ))}
