@@ -52,8 +52,12 @@ export default function Education() {
               {/* top row: logo badge + ongoing pill */}
               <div className="flex items-center justify-between">
                 <div
-                  className="edu-badge w-14 h-14 rounded-xl flex items-center justify-center font-black text-sm"
-                  style={{ background: 'var(--ds-text)', color: 'var(--ds-bg)' }}
+                  className="edu-badge w-14 h-14 rounded-xl flex items-center justify-center font-black text-sm border-2"
+                  style={{
+                    background: 'rgba(197,133,42,0.12)',
+                    color: 'var(--gold)',
+                    borderColor: 'rgba(197,133,42,0.35)',
+                  }}
                 >
                   {edu.short}
                 </div>
@@ -79,7 +83,10 @@ export default function Education() {
 
               {/* period + location */}
               <div className="flex items-center gap-4 text-sm font-semibold" style={{ color: 'var(--cream-muted)' }}>
-                <span>📍 {edu.location}</span>
+                <span className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined" style={{ fontSize: '1.1rem', color: 'var(--gold)' }}>location_on</span>
+                  {edu.location}
+                </span>
               </div>
 
               {/* description */}
