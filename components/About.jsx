@@ -105,9 +105,9 @@ export default function About() {
             {/* trait pills */}
             <div className="flex flex-wrap gap-3">
               {[
-                { icon: '🤝', text: 'Team Work'       },
-                { icon: '📚', text: 'Active Learning'  },
-                { icon: '💡', text: 'Problem Solver'   },
+                { icon: 'handshake',      text: 'Team Work'       },
+                { icon: 'auto_stories',   text: 'Active Learning'  },
+                { icon: 'tips_and_updates', text: 'Problem Solver' },
               ].map(({ icon, text }) => (
                 <span
                   key={text}
@@ -118,7 +118,8 @@ export default function About() {
                     background: 'rgba(255,255,255,0.06)',
                   }}
                 >
-                  <span>{icon}</span> {text}
+                  <span className="material-symbols-outlined" style={{ fontSize: '1.1rem', color: 'var(--gold)' }}>{icon}</span>
+                  {text}
                 </span>
               ))}
             </div>

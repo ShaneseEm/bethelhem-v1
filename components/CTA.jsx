@@ -175,6 +175,10 @@ export default function Contact() {
                   maxLength={MAX_MSG} />
               </div>
 
+              {error && (
+                <p style={{ color: '#ef4444', fontSize: '0.85rem', margin: 0 }}>{error}</p>
+              )}
+
               <button type="submit" disabled={status === 'sending'} className="cz-btn"
                 style={{ opacity: status === 'sending' ? 0.7 : 1 }}>
                 {status === 'sending'
