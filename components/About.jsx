@@ -42,21 +42,21 @@ export default function About() {
           {/* icon row */}
           <div className="flex items-center gap-3 mb-5">
             <div
-              className="w-11 h-11 rounded-full grid place-items-center shadow-md"
-              style={{ background: 'var(--ds-text)' }}
+              className="w-11 h-11 rounded-full grid place-items-center border-2"
+              style={{ background: 'rgba(197,133,42,0.12)', borderColor: 'rgba(197,133,42,0.35)' }}
             >
-              <span className="material-symbols-outlined" style={{ color: 'var(--ds-bg)', fontSize: '1.1rem' }}>menu_book</span>
+              <span className="material-symbols-outlined" style={{ color: 'var(--gold)', fontSize: '1.1rem' }}>menu_book</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-10 h-px" style={{ background: 'var(--ds-border)' }} />
-              <span className="material-symbols-outlined" style={{ color: 'var(--ds-muted)', fontSize: '1.1rem' }}>✦</span>
+              <span style={{ color: 'var(--gold)', fontSize: '1.1rem' }}>✦</span>
               <div className="w-10 h-px" style={{ background: 'var(--ds-border)' }} />
             </div>
             <div
-              className="w-11 h-11 rounded-full grid place-items-center shadow-md"
-              style={{ background: 'var(--ds-text)' }}
+              className="w-11 h-11 rounded-full grid place-items-center border-2"
+              style={{ background: 'rgba(197,133,42,0.12)', borderColor: 'rgba(197,133,42,0.35)' }}
             >
-              <span className="material-symbols-outlined" style={{ color: 'var(--ds-bg)', fontSize: '1rem' }}>menu_book</span>
+              <span className="material-symbols-outlined" style={{ color: 'var(--gold)', fontSize: '1rem' }}>menu_book</span>
             </div>
           </div>
 

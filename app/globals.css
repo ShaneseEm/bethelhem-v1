@@ -466,16 +466,19 @@ textarea.cz-input { height: auto; padding: 15px 16px; }
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   width: 100%; min-height: 58px; padding: 0 32px;
   border-radius: 14px;
-  background: var(--gold);
-  color: #fff; font-family: inherit;
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--gold); font-family: inherit;
   font-size: 0.98rem; font-weight: 700;
-  letter-spacing: 0.03em; border: none; cursor: pointer;
-  box-shadow: 0 8px 32px rgba(197,133,42,0.35);
-  transition: opacity 200ms, transform 180ms, box-shadow 180ms;
+  letter-spacing: 0.03em; border: 1.5px solid var(--gold); cursor: pointer;
+  box-shadow: 0 8px 32px rgba(197,133,42,0.15);
+  transition: background 200ms, color 200ms, transform 180ms, box-shadow 180ms;
 }
 
 .cz-btn:hover:not(:disabled) {
-  opacity: 0.88;
+  background: var(--gold);
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 14px 40px rgba(197,133,42,0.45);
 }
