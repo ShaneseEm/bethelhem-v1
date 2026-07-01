@@ -5,13 +5,13 @@
 /* ── Warm Earth Tone Tokens ── */
 :root {
   /* Light mode — warm cream palette */
-  --ds-bg:     #f5f0e8;               /* dark-section bg  */
+  --ds-bg:     transparent;            /* sections are transparent — body gradient shows */
   --ds-text:   #2e1a0a;               /* dark-section text */
   --ds-muted:  rgba(46, 26, 10, 0.52);
   --ds-border: rgba(46, 26, 10, 0.14);
   --ds-pill:   rgba(46, 26, 10, 0.10);
 
-  --cream:        #faf7f2;             /* light-section bg */
+  --cream:        rgba(250, 247, 242, 0.62); /* glass cream */
   --cream-text:   #2e1a0a;
   --cream-muted:  rgba(46, 26, 10, 0.52);
   --cream-border: rgba(46, 26, 10, 0.12);
@@ -22,13 +22,13 @@
 
 [data-theme="dark"] {
   /* Dark mode — deep warm brown-black (like the screenshot) */
-  --ds-bg:     #080503;                      /* near-black warm dark      */
+  --ds-bg:     transparent;                  /* sections transparent in dark mode too */
   --ds-text:   #f0e4cc;                      /* warm ivory white          */
   --ds-muted:  rgba(240, 228, 204, 0.48);
   --ds-border: rgba(197, 133, 42, 0.18);     /* gold-tinted border        */
   --ds-pill:   rgba(197, 133, 42, 0.10);
 
-  --cream:        #110e09;                   /* "light" sections: just slightly lighter */
+  --cream:        rgba(17, 14, 9, 0.60);     /* dark glass cream */
   --cream-text:   #f0e4cc;
   --cream-muted:  rgba(240, 228, 204, 0.48);
   --cream-border: rgba(197, 133, 42, 0.15);
@@ -39,17 +39,36 @@
 
 html { scroll-behavior: smooth; }
 
-body { background-color: var(--ds-bg); }
+body {
+  background:
+    radial-gradient(ellipse 70% 60% at 5% 5%,   rgba(197,133,42,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 55% at 95% 90%,  rgba(197,133,42,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 80% at 70% 15%,  rgba(250,220,160,0.12) 0%, transparent 50%),
+    #f5f0e8;
+  background-attachment: fixed;
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse 70% 60% at 5% 5%,   rgba(197,133,42,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 55% at 95% 90%,  rgba(197,133,42,0.10) 0%, transparent 55%),
+    #080503;
+  background-attachment: fixed;
+}
 
 /* ── Section helpers ── */
 .section-cream {
   background-color: var(--cream);
   color: var(--cream-text);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .section-dark {
   background-color: var(--ds-bg);
   color: var(--ds-text);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* ── Dark mode: section h2 headings glow amber like the screenshot ── */
@@ -181,6 +200,8 @@ section[id] { scroll-margin-top: 72px; }
 }
 
 .service-card {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   transition: transform 300ms, box-shadow 300ms, border-color 300ms;
 }
 .service-card:hover {
@@ -244,6 +265,8 @@ section[id] { scroll-margin-top: 72px; }
 .cz-root {
   position: relative;
   background: var(--cream);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 100px 0 96px;
   overflow: hidden;
   scroll-margin-top: 72px;
@@ -352,13 +375,22 @@ a.cz-detail-link:hover { color: var(--gold); }
 }
 
 .cz-right {
-  background: var(--ds-bg);
+  background: rgba(255, 251, 246, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--ds-border);
   border-radius: 24px;
   padding: clamp(28px, 4vw, 52px);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 0 0 1px rgba(255,255,255,0.18) inset,
     0 32px 80px rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .cz-right {
+  background: rgba(12, 8, 4, 0.70);
+  box-shadow:
+    0 0 0 1px rgba(197,133,42,0.10) inset,
+    0 32px 80px rgba(0,0,0,0.35);
 }
 
 .cz-form { display: flex; flex-direction: column; gap: 20px; }
