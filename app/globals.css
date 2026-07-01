@@ -28,7 +28,7 @@
   --ds-border: rgba(197, 133, 42, 0.18);     /* gold-tinted border        */
   --ds-pill:   rgba(197, 133, 42, 0.10);
 
-  --cream:        rgba(17, 14, 9, 0.60);     /* dark glass cream */
+  --cream:        rgba(17, 14, 9, 0.40);     /* dark glass cream */
   --cream-text:   #f0e4cc;
   --cream-muted:  rgba(240, 228, 204, 0.48);
   --cream-border: rgba(197, 133, 42, 0.15);
@@ -45,7 +45,7 @@ html { scroll-behavior: smooth; }
   -webkit-backdrop-filter: blur(20px);
 }
 [data-theme="dark"] .glass-header {
-  background: rgba(8, 5, 3, 0.82);
+  background: rgba(8, 5, 3, 0.50);
 }
 
 body {
@@ -396,7 +396,7 @@ a.cz-detail-link:hover { color: var(--gold); }
 }
 
 [data-theme="dark"] .cz-right {
-  background: rgba(12, 8, 4, 0.70);
+  background: rgba(12, 8, 4, 0.45);
   box-shadow:
     0 0 0 1px rgba(197,133,42,0.10) inset,
     0 32px 80px rgba(0,0,0,0.35);
