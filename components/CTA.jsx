@@ -68,7 +68,7 @@ export default function Contact() {
           </div>
 
           <div className="cz-headline">
-            <p className="cz-eyebrow">Let's Connect</p>
+            <p className="cz-eyebrow">Let&apos;s Connect</p>
             <h2 className="cz-h2">
               Have an idea?<br />
               <em>Let&apos;s talk.</em>
