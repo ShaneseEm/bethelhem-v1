@@ -35,21 +35,15 @@
 
   --gold:      #c8892e;                      /* slightly richer amber     */
   --photo-bg:  #e8c896;
-
-  background:
-    radial-gradient(ellipse 70% 60% at 5% 5%,   rgba(197,133,42,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 55% at 95% 90%,  rgba(197,133,42,0.10) 0%, transparent 55%),
-    #080503;
 }
 
 html {
   scroll-behavior: smooth;
-  min-height: 100%;
-  background:
-    radial-gradient(ellipse 70% 60% at 5% 5%,   rgba(197,133,42,0.22) 0%, transparent 55%),
-    radial-gradient(ellipse 65% 55% at 95% 90%,  rgba(197,133,42,0.15) 0%, transparent 55%),
-    radial-gradient(ellipse 90% 80% at 70% 15%,  rgba(250,220,160,0.12) 0%, transparent 50%),
-    #f5f0e8;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 .glass-header {
@@ -63,6 +57,25 @@ html {
 
 body {
   background: transparent;
+}
+
+#bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 60% at 5% 5%,   rgba(197,133,42,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 55% at 95% 90%,  rgba(197,133,42,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 80% at 70% 15%,  rgba(250,220,160,0.12) 0%, transparent 50%),
+    #f5f0e8;
+}
+
+[data-theme="dark"] #bg-layer {
+  background:
+    radial-gradient(ellipse 70% 60% at 5% 5%,   rgba(197,133,42,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 55% at 95% 90%,  rgba(197,133,42,0.10) 0%, transparent 55%),
+    #080503;
 }
 
 /* ── Section helpers ── */

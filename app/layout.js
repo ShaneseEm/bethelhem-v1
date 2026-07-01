@@ -30,7 +30,10 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
         />
       </head>
-      <body className="bg-navy font-sans overflow-x-hidden">{children}</body>
+      <body className="font-sans overflow-x-hidden">
+        <div id="bg-layer" aria-hidden="true" />
+        {children}
+      </body>
     </html>
   )
 }
