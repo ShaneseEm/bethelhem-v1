@@ -43,8 +43,8 @@ export default function Header() {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 flex items-center px-6 lg:px-16 h-[72px] border-b transition-colors duration-300"
-        style={{ background: 'var(--ds-bg)', borderColor: 'var(--ds-border)' }}
+        className="fixed top-0 left-0 right-0 z-50 flex items-center px-4 lg:px-16 h-[72px] border-b transition-colors duration-300 glass-header"
+        style={{ borderColor: 'var(--ds-border)' }}
       >
         {/* Logo */}
         <a
@@ -52,12 +52,12 @@ export default function Header() {
           className="shrink-0 flex items-center gap-1.5 mr-6 transition-opacity hover:opacity-75"
           aria-label="Go to home"
         >
-          <span style={{ fontSize: '2rem', marginLeft: '66px' }} aria-hidden="true">🦋</span>
+          <span style={{ fontSize: '1.6rem' }} aria-hidden="true">🦋</span>
           <span
-            className="font-bold tracking-[0.18em] uppercase ml-2"
+            className="font-bold tracking-[0.18em] uppercase ml-1"
             style={{
               fontFamily: 'var(--font-cormorant, Georgia, serif)',
-              fontSize: '2rem',
+              fontSize: 'clamp(1.3rem, 4vw, 2rem)',
               color: 'var(--ds-text)',
             }}
           >
@@ -135,8 +135,8 @@ export default function Header() {
       {/* Mobile drawer */}
       {menuOpen && (
         <div
-          className="fixed top-[72px] left-0 right-0 z-40 flex flex-col gap-1 px-6 py-4 border-b lg:hidden"
-          style={{ background: 'var(--ds-bg)', borderColor: 'var(--ds-border)' }}
+          className="fixed top-[72px] left-0 right-0 z-40 flex flex-col gap-1 px-6 py-4 border-b lg:hidden glass-header"
+          style={{ borderColor: 'var(--ds-border)' }}
         >
           {NAV.map(({ label, href }) => {
             const isActive = active === href

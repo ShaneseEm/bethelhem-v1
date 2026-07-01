@@ -39,6 +39,15 @@
 
 html { scroll-behavior: smooth; }
 
+.glass-header {
+  background: rgba(245, 240, 232, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+[data-theme="dark"] .glass-header {
+  background: rgba(8, 5, 3, 0.82);
+}
+
 body {
   background:
     radial-gradient(ellipse 70% 60% at 5% 5%,   rgba(197,133,42,0.22) 0%, transparent 55%),
