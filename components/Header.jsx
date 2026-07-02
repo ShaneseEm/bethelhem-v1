@@ -38,6 +38,13 @@ export default function Header() {
     setTheme(next)
     document.documentElement.dataset.theme = next
     localStorage.setItem('portfolio-theme', next)
+
+    const layer = document.getElementById('bg-layer')
+    if (layer) {
+      layer.style.display = 'none'
+      void layer.offsetHeight
+      layer.style.display = ''
+    }
   }, [theme])
 
   return (
