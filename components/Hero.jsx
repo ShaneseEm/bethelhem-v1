@@ -108,19 +108,6 @@ export default function Hero() {
                          transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-2xl"
             />
 
-            {/* experience badge */}
-            <div
-              className="absolute -right-10 bottom-16 z-20 rounded-2xl shadow-xl px-5 py-4"
-              style={{ background: 'var(--ds-bg)', border: '1px solid var(--ds-border)' }}
-            >
-              <span className="block font-black text-3xl leading-none" style={{ color: 'var(--gold)' }}>
-                3+
-              </span>
-              <span className="block font-semibold text-xs leading-snug mt-1" style={{ color: 'var(--ds-muted)' }}>
-                Years<br />Experience
-              </span>
-            </div>
-
             {/* gold dot accent */}
             <div
               className="absolute -top-2 -right-2 z-20 w-5 h-5 rounded-full shadow-md"
