@@ -13,7 +13,7 @@ function RotatingBadge() {
           fill="none"
         />
         <text fontSize="10.5" fill="currentColor" fontFamily="var(--font-jakarta), sans-serif" fontWeight="700" letterSpacing="2">
-          <textPath href="#aboutCircle">Hire Me • Hire Me • Hire Me • </textPath>
+          <textPath href="#aboutCircle">Let's work together • Let's work together • </textPath>
         </text>
       </svg>
       <a
